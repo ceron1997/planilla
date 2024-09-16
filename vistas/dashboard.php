@@ -7,6 +7,7 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
+
 ?>
     <?php include 'llayouts/plantilla_header.php'; ?>
     <div class="container">

@@ -21,7 +21,7 @@ $nombre_usuario = $_POST['nombre_usuario'];
 $password = $_POST['password'];
 
 
-// Verificar si el usuario existe y la contraseña es correcta
+// Verificar credenciales
 $user = $usuario->getUsuarioPorNombre($nombre_usuario);
 // var_dump($user);
 if ($user && password_verify($password, $user['password'])) {
@@ -30,7 +30,7 @@ if ($user && password_verify($password, $user['password'])) {
     $_SESSION['rol'] = $user['rol'];
 
     echo "Bienvenido, " . $_SESSION['usuario'];
-    // Redirigir al dashboard o página principal
+    // Redirigir al dashboard 
     header("Location: vistas/dashboard.php");
 } else {
     // Contraseña incorrecta o usuario no encontrado
